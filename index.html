@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10000 Hours Challenge - Profile</title>
+    <!-- Add Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .profile {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+        .profile-info {
+            flex: 1;
+        }
+        .profile-info h2 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .profile-info p {
+            margin: 0;
+            color: #666;
+        }
+        #counter {
+            font-size: 24px;
+            color: #333;
+        }
+        #hours-left {
+            font-size: 18px;
+            color: #666;
+        }
+        #increment-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        #increment-btn:hover {
+            background-color: #0056b3;
+        }
+        #charts-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        #charts-container canvas {
+            width: 48%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #milestones {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #milestones h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        #milestones ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #milestones ul li {
+            margin-bottom: 5px;
+            color: #666;
+        }
+        #notes {
+            width: calc(100% - 20px);
+            height: 150px;
+            margin-top: 20px;
+            padding: 10px;
+            resize: none;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Skill Scale</h1>
+        <div class="profile">
+            <img src="profile.jpg" alt="Profile Picture">
+            <div class="profile-info">
+                <h2>Meghraj </h2>
+                <p>Occupation: Aspiring Entreprenuer</p>
+                <p>Location: India</p>
+            </div>
+        </div>
+
+        <!-- Counter -->
+        <div>
+            <h2>Counter: <span id="counter">0</span></h2>
+            <h3 id="hours-left">Hours Left: 10000</h3>
+            <button id="increment-btn">Increment Counter</button>
+        </div>
+
+        <!-- Charts -->
+        <div id="charts-container">
+            <canvas id="pie-chart"></canvas>
+            <canvas id="line-chart"></canvas>
+        </div>
+
+        <!-- Milestones -->
+        <div id="milestones">
+            <h3>Milestones:</h3>
+            <ul id="milestones-list">
+                <!-- Milestones will be added dynamically here -->
+            </ul>
+        </div>
+
+        <!-- Notes -->
+        <div>
+            <h2>Notes:</h2>
+            <textarea id="notes" placeholder="Write down important information here..."></textarea>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 10000 Hours Challenge
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
